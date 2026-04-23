@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "noroshibi",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/tmp/package/index.js", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}

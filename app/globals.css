@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+/* ── テーマ変数 ─────────────────────────────────── */
+:root {
+  /* Light theme (default) */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --bg-card: #FFFFFF;
+  --bg-card-border: #E8E8E8;
+  --text-primary: #1A1A1A;
+  --text-secondary: #666666;
+  --accent: #B22222;
+  --accent-light: #D43030;
+  --accent-dark: #8B1111;
+  --accent-glow: rgba(178, 34, 34, 0.15);
+  --accent-gold: #F97316;
+  --nav-bg: rgba(255, 255, 255, 0.96);
+  --nav-border: rgba(178, 34, 34, 0.12);
+  --divider: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-card: #1A1A1A;
+  --bg-card-border: #2A2A2A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --accent: #F97316;
+  --accent-light: #FB923C;
+  --accent-dark: #EA6000;
+  --accent-glow: rgba(249, 115, 22, 0.25);
+  --accent-gold: #FBBF24;
+  --nav-bg: rgba(10, 10, 10, 0.92);
+  --nav-border: rgba(249, 115, 22, 0.15);
+  --divider: rgba(255, 255, 255, 0.06);
+}
+
+/* ── ベーススタイル ──────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-noto-jp), sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ── アニメーション ───────────────────────────────── */
+@keyframes ember-rise {
+  0% {
+    transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.9; }
+  70% { opacity: 0.4; }
+  100% {
+    transform: translateY(-120px) translateX(var(--drift, 15px)) scale(0.1) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -300% center; }
+  100% { background-position: 300% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 50px var(--accent-glow), 0 0 80px var(--accent-glow); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes line-grow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ── ユーティリティ ────────────────────────────────── */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--accent) 0%,
+    var(--accent-gold) 40%,
+    var(--accent-light) 60%,
+    var(--accent) 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.accent-bg {
+  background: var(--accent);
+}
+
+.card-base {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-base:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px var(--accent-glow);
+  transform: translateY(-4px);
+}
+
+.section-divider {
+  border-color: var(--divider);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  box-shadow: 0 4px 24px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
