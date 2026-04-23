@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const companyInfo = [
   { label: "会社名", value: "株式会社Noroshibi" },
@@ -34,6 +34,15 @@ function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; del
 }
 
 export default function Company() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   return (
     <section
       id="company"
@@ -61,10 +70,9 @@ export default function Company() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "48px",
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+            gap: isMobile ? "24px" : "48px",
           }}
-          className="grid-cols-1 md:grid-cols-2"
         >
           {/* Company info table */}
           <FadeInSection delay={0.1}>
@@ -98,30 +106,33 @@ export default function Company() {
                   key={item.label}
                   style={{
                     display: "flex",
-                    padding: "18px 28px",
+                    flexDirection: isMobile ? "column" : "row",
+                    padding: isMobile ? "16px 20px" : "18px 28px",
                     borderBottom:
                       i < companyInfo.length - 1
                         ? "1px solid var(--bg-card-border)"
                         : "none",
-                    gap: "16px",
+                    gap: isMobile ? "4px" : "16px",
                   }}
                 >
                   <div
                     style={{
-                      fontSize: "13px",
-                      fontWeight: 600,
+                      fontSize: "12px",
+                      fontWeight: 700,
                       color: "var(--accent)",
-                      minWidth: "100px",
+                      minWidth: isMobile ? "auto" : "110px",
                       flexShrink: 0,
+                      letterSpacing: "0.02em",
                     }}
                   >
                     {item.label}
                   </div>
                   <div
                     style={{
-                      fontSize: "14px",
+                      fontSize: isMobile ? "14px" : "14px",
                       color: "var(--text-primary)",
-                      lineHeight: 1.6,
+                      lineHeight: 1.7,
+                      wordBreak: "break-word",
                     }}
                   >
                     {item.value}

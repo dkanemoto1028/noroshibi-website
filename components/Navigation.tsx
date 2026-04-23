@@ -37,7 +37,7 @@ export default function Navigation() {
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 50,
+        zIndex: 1000,
         background: scrolled || menuOpen ? "var(--nav-bg)" : "transparent",
         borderBottom: scrolled ? "1px solid var(--nav-border)" : "1px solid transparent",
         backdropFilter: scrolled || menuOpen ? "blur(16px)" : "none",

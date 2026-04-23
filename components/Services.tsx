@@ -377,13 +377,13 @@ export default function Services() {
         </div>
 
         <FadeInSection delay={0.2}>
-          <div style={{ marginTop: "56px", textAlign: "center" }}>
+          <div style={{ marginTop: "56px", textAlign: "center", padding: "0 16px" }}>
             <a
               href={FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
-              style={{ textDecoration: "none", fontSize: "16px" }}
+              style={{ textDecoration: "none", fontSize: "16px", maxWidth: "360px", width: "100%" }}
             >
               🔥 どのプラットフォームか相談する（無料）
             </a>
