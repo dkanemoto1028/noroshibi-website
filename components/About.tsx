@@ -9,25 +9,21 @@ const values = [
     en: "IGNITE",
     ja: "着火する",
     desc: "最初の一歩を踏み出す勇気に火をつける。あなたの可能性を解放し、行動のきっかけを生み出す。",
-    icon: "🔥",
   },
   {
     en: "AMPLIFY",
     ja: "増幅する",
     desc: "小さな炎を大きなモメンタムへ。継続的な施策でエンゲージメントを爆発的に拡大する。",
-    icon: "📡",
   },
   {
     en: "MOMENTUM",
     ja: "勢い",
     desc: "止まらない推進力を生み出す。一度火がついたら、絶え間なく成長し続けるサイクルを作る。",
-    icon: "⚡",
   },
   {
     en: "AUTHENTIC",
     ja: "本物",
     desc: "本物の価値だけを届ける。データと現場知識を融合させた、信頼できる本質的な支援。",
-    icon: "💎",
   },
 ];
 
@@ -197,7 +193,28 @@ export default function About() {
                   cursor: "default",
                 }}
               >
-                <div style={{ fontSize: "32px", marginBottom: "16px" }}>{val.icon}</div>
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  marginBottom: "16px",
+                }}>
+                  <div style={{
+                    width: "3px",
+                    height: "24px",
+                    background: "var(--accent)",
+                    borderRadius: "2px",
+                    flexShrink: 0,
+                  }}/>
+                  <span style={{
+                    fontSize: "11px",
+                    fontWeight: 900,
+                    letterSpacing: "0.15em",
+                    color: "var(--accent)",
+                  }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
                 <div
                   style={{
                     fontSize: "11px",

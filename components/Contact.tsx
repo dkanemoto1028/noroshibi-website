@@ -228,7 +228,7 @@ export default function Contact() {
                   marginTop: "8px",
                 }}
               >
-                🔥 送信する（メーラーが開きます）
+                送信する →
               </button>
 
               <p style={{ fontSize: "12px", color: "var(--text-secondary)", textAlign: "center" }}>

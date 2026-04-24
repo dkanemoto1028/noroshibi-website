@@ -5,28 +5,24 @@ import { useRef } from "react";
 
 const reasons = [
   {
-    icon: "👥",
     title: "多様な専門家チーム",
     subtitle: "Diverse Expert Team",
     desc: "ディレクター・プランナー・デザイナー・動画クリエイターが揃ったチーム体制。個人への依存なく、一貫した高品質な運用を実現します。",
     highlight: "属人化しない安定した運用品質",
   },
   {
-    icon: "🌏",
     title: "インバウンド対応 × 語学力",
     subtitle: "Multilingual & Inbound Expertise",
     desc: "代表が日中ハーフのバックグラウンドを持ち、中国語SNS（小紅書・Bilibili）の運用ノウハウも豊富。日本企業の中国展開を最短経路でサポート。",
     highlight: "小紅書・Bilibili対応可能",
   },
   {
-    icon: "🌃",
     title: "現場経験者によるリアルな理解",
     subtitle: "Real Field Experience",
     desc: "代表が日本・海外での飲食産業・接客業の現場経験を持ち、個人事業の課題をリアルに理解するメンバーが在籍。他社では理解しづらい業界特有の課題に真摯に向き合います。",
     highlight: "飲食・接客・個人事業に特化した支援",
   },
   {
-    icon: "📈",
     title: "データドリブン × 高速PDCA",
     subtitle: "Data-Driven & Rapid PDCA",
     desc: "インサイトデータ・市場トレンドを常に分析し、感覚に頼らない論理的な戦略設計。確実なROIを追求する迅速な改善サイクルで結果を出します。",
@@ -119,7 +115,28 @@ export default function WhyUs() {
                   }}
                 />
 
-                <div style={{ fontSize: "40px", marginBottom: "20px" }}>{reason.icon}</div>
+                <div style={{ marginBottom: "20px", color: "var(--accent)" }}>
+                  {i === 0 && (
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                  )}
+                  {i === 1 && (
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                  )}
+                  {i === 2 && (
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  )}
+                  {i === 3 && (
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                    </svg>
+                  )}
+                </div>
 
                 <p
                   style={{
@@ -168,7 +185,7 @@ export default function WhyUs() {
                     borderRadius: "20px",
                   }}
                 >
-                  ✦ {reason.highlight}
+                  {reason.highlight}
                 </div>
               </div>
             </FadeInSection>

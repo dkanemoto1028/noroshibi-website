@@ -10,7 +10,6 @@ const stats = [
     display: "800万+",
     label: "総動画再生回数",
     sub: "累計実績",
-    icon: "▶️",
   },
   {
     value: 3100000,
@@ -18,7 +17,6 @@ const stats = [
     display: "310万",
     label: "最大単発再生回数",
     sub: "エンタメ Instagram 単投稿",
-    icon: "🚀",
   },
   {
     value: 23500,
@@ -26,7 +24,6 @@ const stats = [
     display: "23,500",
     label: "獲得フォロワー数",
     sub: "特化型 Instagram メディア",
-    icon: "👤",
   },
   {
     value: 66000,
@@ -34,7 +31,6 @@ const stats = [
     display: "6.6万+",
     label: "中国SNS最大フォロワー",
     sub: "小紅書（RED）プラットフォーム",
-    icon: "🇨🇳",
   },
 ];
 
@@ -177,7 +173,6 @@ export default function Results() {
                   }}
                 />
 
-                <div style={{ fontSize: "28px", marginBottom: "16px" }}>{stat.icon}</div>
                 <div
                   style={{
                     fontSize: "clamp(36px, 5vw, 52px)",

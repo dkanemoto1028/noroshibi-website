@@ -102,7 +102,7 @@ export default function Navigation() {
                 transition: "all 0.2s",
               }}
             >
-              {theme === "dark" ? "☀️ Light" : "🔥 Dark"}
+              {theme === "dark" ? "Light" : "Dark"}
             </button>
             <a href="#contact" className="btn-primary" style={{ textDecoration: "none", fontSize: "14px" }}>
               無料相談
@@ -211,7 +211,7 @@ export default function Navigation() {
                 width: "100%",
               }}
             >
-              {theme === "dark" ? "☀️ ライトモード" : "🔥 ダークモード"}
+              {theme === "dark" ? "ライトモード" : "ダークモード"}
             </button>
           </div>
         </div>

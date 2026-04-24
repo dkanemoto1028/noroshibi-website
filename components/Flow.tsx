@@ -6,35 +6,30 @@ import { useRef } from "react";
 const steps = [
   {
     num: "01",
-    icon: "💬",
     title: "ヒアリング",
     desc: "現状の課題・目標・ターゲット・ご予算などを丁寧にヒアリング。法人・個人どちらも歓迎。",
     duration: "初回無料",
   },
   {
     num: "02",
-    icon: "🗺️",
     title: "戦略立案",
     desc: "ヒアリング内容を基に、競合分析・ターゲット設計・プラットフォーム選定・KPI設定を行います。",
     duration: "〜1週間",
   },
   {
     num: "03",
-    icon: "📝",
     title: "ご契約",
     desc: "プランと費用をご確認いただき、正式にご契約。明瞭な料金体系でご安心ください。",
     duration: "即日〜",
   },
   {
     num: "04",
-    icon: "⚙️",
     title: "アカウント設定",
     desc: "プロフィール最適化・初期コンテンツ設計・ハッシュタグ戦略など、スタートダッシュの準備を整えます。",
     duration: "1〜2週間",
   },
   {
     num: "05",
-    icon: "🚀",
     title: "運用開始",
     desc: "本格的な運用をスタート。月次レポートで進捗を共有し、PDCAを高速で回します。",
     duration: "継続",
@@ -127,7 +122,7 @@ export default function Flow() {
                       flexShrink: 0,
                     }}
                   >
-                    {step.icon}
+                    {step.num}
                   </div>
                   {i < steps.length - 1 && (
                     <div

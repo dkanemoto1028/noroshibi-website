@@ -148,7 +148,7 @@ export default function Hero() {
             className="btn-primary"
             style={{ textDecoration: "none", fontSize: "16px" }}
           >
-            🔥 無料相談はこちら
+            無料相談はこちら →
           </a>
           <a
             href="#services"

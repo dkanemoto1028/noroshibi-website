@@ -12,10 +12,10 @@ const companyInfo = [
 ];
 
 const ceoProfile = [
-  { icon: "🎓", label: "UCLA 卒業", desc: "米国カリフォルニア大学ロサンゼルス校にて現代社会学と社会心理学を学ぶ" },
-  { icon: "💼", label: "SmartNews 勤務", desc: "テックメディア企業でマーケティング・データ分析に従事" },
-  { icon: "🍽️", label: "日本・海外で飲食・接客業を経験", desc: "現場で売上向上を追求する中、SNSが集客を根本から変える可能性を体感。日中両国でのSNS運用にも従事。" },
-  { icon: "🚀", label: "Noroshibi 創業", desc: "「埋もれた価値に狼煙を」の理念で2026年に起業" },
+  { label: "UCLA 卒業", desc: "米国カリフォルニア大学ロサンゼルス校にて現代社会学と社会心理学を学ぶ" },
+  { label: "SmartNews 勤務", desc: "テックメディア企業でマーケティング・データ分析に従事" },
+  { label: "日本・海外で飲食・接客業を経験", desc: "現場で売上向上を追求する中、SNSが集客を根本から変える可能性を体感。日中両国でのSNS運用にも従事。" },
+  { label: "Noroshibi 創業", desc: "「埋もれた価値に狼煙を」の理念で2026年に起業" },
 ];
 
 function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -230,7 +230,9 @@ export default function Company() {
                           flexShrink: 0,
                         }}
                       >
-                        {item.icon}
+                        <span style={{ fontSize: "13px", fontWeight: 900, color: "white" }}>
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
                       </div>
                       <div>
                         <div
