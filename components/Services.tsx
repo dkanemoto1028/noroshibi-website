@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTheme } from "./ThemeProvider";
 
 const FORM_URL = "https://ws.formzu.net/dist/S644748193/";
 
@@ -13,7 +14,8 @@ const platforms = [
     color: "#C32AA3",
     colorB: "#F46F30",
     isGradient: true,
-    emoji: "📸",
+    logo: "instagram.png",
+    logoDark: null,
     tag: "法人・個人",
     tagColor: "#C32AA3",
     desc: "フィード・リール・ストーリーズを活用した世界観構築と来店誘導。アルゴリズムを熟知した投稿設計でフォロワー獲得と売上向上を実現します。",
@@ -32,7 +34,8 @@ const platforms = [
     color: "#010101",
     colorB: "#69C9D0",
     isGradient: true,
-    emoji: "🎵",
+    logo: "tiktok-black.png",
+    logoDark: "tiktok-white.png",
     tag: "法人・個人",
     tagColor: "#EE1D52",
     desc: "Z世代・ミレニアル世代に圧倒的リーチを持つTikTok。企画から撮影・編集まで一貫対応し、アルゴリズムを徹底攻略して爆発的な認知拡大を実現。",
@@ -51,7 +54,8 @@ const platforms = [
     color: "#000000",
     colorB: "#333333",
     isGradient: false,
-    emoji: "✖️",
+    logo: "x-black.png",
+    logoDark: "x-white.png",
     tag: "法人・個人",
     tagColor: "#000000",
     desc: "リアルタイム性と拡散力が強みのX。インプレッション最大化とフォロワーコミュニティの育成で、ブランド認知と信頼感を同時に高めます。",
@@ -70,7 +74,8 @@ const platforms = [
     color: "#FF0000",
     colorB: "#CC0000",
     isGradient: false,
-    emoji: "▶️",
+    logo: "youtube.png",
+    logoDark: null,
     tag: "法人・個人",
     tagColor: "#FF0000",
     desc: "長尺動画からYouTube Shortsまで、資産性の高いコンテンツでブランドを構築。SEO最適化でチャンネル登録者を継続的に伸ばします。",
@@ -89,6 +94,8 @@ const platforms = [
     color: "#FF2442",
     colorB: "#CC001A",
     isGradient: false,
+    logo: null,
+    logoDark: null,
     emoji: "🔴",
     tag: "法人限定",
     tagColor: "#FF2442",
@@ -108,6 +115,8 @@ const platforms = [
     color: "#B22222",
     colorB: "#8B1111",
     isGradient: false,
+    logo: null,
+    logoDark: null,
     emoji: "📊",
     tag: "法人限定",
     tagColor: "#6366F1",
@@ -144,6 +153,8 @@ function FadeInSection({
 }
 
 export default function Services() {
+  const { theme } = useTheme();
+
   return (
     <section id="services" style={{ background: "var(--bg-secondary)", padding: "100px 20px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -239,9 +250,20 @@ export default function Services() {
                           justifyContent: "center",
                           fontSize: "24px",
                           flexShrink: 0,
+                          padding: "8px",
                         }}
                       >
-                        {p.emoji}
+                        {p.logo ? (
+                          <img
+                            src={`/sns-logos/${
+                              p.logoDark && theme === "dark" ? p.logoDark : p.logo
+                            }`}
+                            alt={p.name}
+                            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                          />
+                        ) : (
+                          p.emoji
+                        )}
                       </div>
                       <div>
                         <div
